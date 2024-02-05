@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityServer", "IdentityServer", "{64E782B0-2508-4AD1-83EE-86021E4CB227}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApiGateways", "ApiGateways", "{9B4C51F6-1AF4-4113-B110-68BB5B20DFB5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{84A5D951-F812-4FCC-BB36-6A2FCA60DAFE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{59170C69-0376-439C-8725-4AA6F79C6FF0}"
+	ProjectSection(SolutionItems) = preProject
+		Ports.txt = Ports.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Alpata.ApiGateway", "Alpata.ApiGateway", "{B3A4647D-7B63-4B1F-955C-A1B130118115}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alpata.Gateway", "ApiGateways\Alpata.ApiGateway\Alpata.Gateway\Alpata.Gateway.csproj", "{A16D90F8-46B6-4498-8355-692F57B8CF84}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A16D90F8-46B6-4498-8355-692F57B8CF84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A16D90F8-46B6-4498-8355-692F57B8CF84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A16D90F8-46B6-4498-8355-692F57B8CF84}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A16D90F8-46B6-4498-8355-692F57B8CF84}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B3A4647D-7B63-4B1F-955C-A1B130118115} = {9B4C51F6-1AF4-4113-B110-68BB5B20DFB5}
+		{A16D90F8-46B6-4498-8355-692F57B8CF84} = {B3A4647D-7B63-4B1F-955C-A1B130118115}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1837AEFF-B401-4E1F-BD77-2A4BDA3FDA40}
+	EndGlobalSection
+EndGlobal

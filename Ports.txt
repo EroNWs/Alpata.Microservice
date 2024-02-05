@@ -1,0 +1,7 @@
+
+Service
+	-Meeting => 5010
+
+IdentityServer4 => 5000
+
+ApiGateway => 5000
