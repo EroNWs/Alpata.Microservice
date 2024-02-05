@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataAccess\" />
+    <Folder Include="DataAccess\EntitfyFramework\" />
   </ItemGroup>
 
 </Project>
