@@ -8,9 +8,13 @@
 
   <ItemGroup>
     <Folder Include="Extensions\" />
-    <Folder Include="Interfaces\" />
     <Folder Include="Services\" />
     <Folder Include="Profiles\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Meeting.Core\Meeting.Core.csproj" />
+    <ProjectReference Include="..\Meeting.Dtos\Meeting.Dtos.csproj" />
   </ItemGroup>
 
 </Project>
