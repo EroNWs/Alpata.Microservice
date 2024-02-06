@@ -6,4 +6,13 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Meeting.Dal.Int\Meeting.Dal.Int.csproj" />
+    <ProjectReference Include="..\Meeting.Dal\Meeting.Dal.csproj" />
+  </ItemGroup>
+
 </Project>

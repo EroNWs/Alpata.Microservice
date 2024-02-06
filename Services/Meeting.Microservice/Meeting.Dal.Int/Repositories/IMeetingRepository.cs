@@ -1,9 +1,6 @@
-﻿using Meeting.Core.DataAccess.Interfaces;
-using Meeting.Entities.DbSets;
+﻿namespace Meeting.Dal.Int.Repositories;
 
-namespace Meeting.Dal.Int.Repositories;
-
-internal interface IMeetingRepository : IAsyncRepository, 
+public interface IMeetingRepository : IAsyncRepository, 
     IAsyncInsertableRepository<MeetingPlanning>, 
     IAsyncFindableRepository<MeetingPlanning>, 
     IAsyncDeleteableRepository<MeetingPlanning>,
