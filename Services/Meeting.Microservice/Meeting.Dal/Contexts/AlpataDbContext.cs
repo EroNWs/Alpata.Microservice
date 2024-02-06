@@ -1,8 +1,9 @@
 ﻿using Meeting.Core.Entities.Base;
+using Meeting.Core.Enums;
+using Meeting.Ent.Conf;
 using Meeting.Entities.DbSets;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.ChangeTracking;
 using System.Security.Claims;
 

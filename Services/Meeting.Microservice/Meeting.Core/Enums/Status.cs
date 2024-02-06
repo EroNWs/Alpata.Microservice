@@ -2,8 +2,10 @@
 
 public enum Status
 {
-	Added =1,
-	Modified =2,
-	Deleted =3
-
+    Added = 1,
+    Modified = 2,
+    Deleted = 4,
+    Active = 3,
+    Passive = 5
 }
+
