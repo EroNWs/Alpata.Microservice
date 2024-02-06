@@ -1,8 +1,4 @@
-﻿using Meeting.Core.Entities.EntityTypeConfigurations;
-using Meeting.Entities.DbSets;
-using Microsoft.EntityFrameworkCore.Metadata.Builders;
-
-namespace Meeting.Ent.Conf;
+﻿namespace Meeting.Ent.Conf;
 
 public class MeetingConfiguration: AuditableEntityConfiguration<MeetingPlanning>
 {

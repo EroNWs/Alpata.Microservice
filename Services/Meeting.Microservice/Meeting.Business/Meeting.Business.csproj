@@ -7,13 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Extensions\" />
-    <Folder Include="Services\" />
-    <Folder Include="Profiles\" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Meeting.Core\Meeting.Core.csproj" />
+    <ProjectReference Include="..\Meeting.Dal.Int\Meeting.Dal.Int.csproj" />
     <ProjectReference Include="..\Meeting.Dtos\Meeting.Dtos.csproj" />
   </ItemGroup>
 

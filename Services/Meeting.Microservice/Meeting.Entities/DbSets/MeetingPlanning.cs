@@ -1,6 +1,4 @@
-﻿using Meeting.Core.Entities.Base;
-
-namespace Meeting.Entities.DbSets;
+﻿namespace Meeting.Entities.DbSets;
 
 public class MeetingPlanning:AuditableEntity
 {

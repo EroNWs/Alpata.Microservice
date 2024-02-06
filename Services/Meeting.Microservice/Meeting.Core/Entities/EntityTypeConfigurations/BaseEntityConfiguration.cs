@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Meeting.Core.Entities.EntityTypeConfigurations;
 
-public abstract class BaseEntityConfiguration<T>: IEntityTypeConfiguration where T:BaseEntity
+public abstract class BaseEntityConfiguration<T>: IEntityTypeConfiguration<T> where T:BaseEntity
 {
 
 	public virtual void Configure(EntityTypeBuilder<T> builder)
