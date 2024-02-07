@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Alpata.IdentityServer.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240207060702_FilePathUpload")]
-    partial class FilePathUpload
+    [Migration("20240207085138_dublication")]
+    partial class dublication
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

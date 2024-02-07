@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Alpata.IdentityServer.Migrations
 {
-    public partial class initial : Migration
+    public partial class dublication : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,10 +40,9 @@ namespace Alpata.IdentityServer.Migrations
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
                     AccessFailedCount = table.Column<int>(nullable: false),
-                    Name = table.Column<string>(nullable: true),
                     Surname = table.Column<string>(nullable: true),
                     Phone = table.Column<string>(nullable: true),
-                    ProfilePicture = table.Column<string>(nullable: true)
+                    ProfilePicturePath = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
