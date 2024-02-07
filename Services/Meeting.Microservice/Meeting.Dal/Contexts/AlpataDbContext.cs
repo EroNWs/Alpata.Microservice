@@ -11,7 +11,7 @@ namespace Meeting.Dal.Contexts;
 public  class AlpataDbContext: DbContext
 {
 
-    public const string ConnectionName = "AlpataDbContext.Meeting";
+    public const string ConnectionName = "AlpataDbContext";
 
     private readonly IHttpContextAccessor? _contextAccessor;
 

@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Meeting.Dal.Int\Meeting.Dal.Int.csproj" />
     <ProjectReference Include="..\Meeting.Ent.Conf\Meeting.Ent.Conf.csproj" />
     <ProjectReference Include="..\Meeting.Entities\Meeting.Entities.csproj" />
   </ItemGroup>

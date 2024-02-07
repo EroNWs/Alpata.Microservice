@@ -15,7 +15,6 @@ public static class DependencyInjection
         services.AddScoped<IMeetingService, MeetingService>();
 
         return services;
-
     }
 
 

@@ -9,8 +9,6 @@ public class MeetingConfiguration: AuditableEntityConfiguration<MeetingPlanning>
         builder.HasKey(e => e.Id);
         builder.Property(m => m.MeetingName).IsRequired().HasMaxLength(256);
         builder.Property(m => m.MeetingDescription).HasMaxLength(1024);
-        builder.Property(m => m.DocumentPath).HasMaxLength(512);
-
     }
 
 }

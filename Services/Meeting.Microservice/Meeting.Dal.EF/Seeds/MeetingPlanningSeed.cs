@@ -9,7 +9,7 @@ internal static class MeetingPlanningSeed
     {
         var dbContextBuilder = new DbContextOptionsBuilder<AlpataDbContext>();
 
-        dbContextBuilder.UseSqlServer(configuration.GetConnectionString("AlpataDbContext.Meeting"));
+        dbContextBuilder.UseSqlServer(configuration.GetConnectionString("AlpataDbContext"));
 
         using AlpataDbContext context = new(dbContextBuilder.Options);
 

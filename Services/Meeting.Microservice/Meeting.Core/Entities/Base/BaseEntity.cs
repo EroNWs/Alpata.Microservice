@@ -18,4 +18,11 @@ public abstract class BaseEntity: ICreateableEntity
 	public DateTime ModifiedDate { get; set;}
 
 
+    public BaseEntity()
+    {      
+        CreatedDate = DateTime.UtcNow;
+        ModifiedDate = DateTime.UtcNow;
+        Status = Status.Active; 
+    }
+
 }
