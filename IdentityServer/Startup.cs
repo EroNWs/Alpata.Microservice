@@ -30,18 +30,28 @@ namespace Alpata.IdentityServer
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowSpecificOrigin",
+                    builder => builder.WithOrigins("http://localhost:5050")
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
             services.AddControllersWithViews();
             services.AddLocalApiAuthentication();
             services.AddDbContext<ApplicationDbContext>(options =>
               options.UseSqlServer(
                   Configuration.GetConnectionString("DefaultConnection"),
                   sqlServerOptions => sqlServerOptions.EnableRetryOnFailure(
-                      maxRetryCount: 5, 
+                      maxRetryCount: 5,
                       maxRetryDelay: TimeSpan.FromSeconds(30),
-                      errorNumbersToAdd: null 
+                      errorNumbersToAdd: null
                   )
               )
+
           );
+
 
 
 
@@ -92,7 +102,7 @@ namespace Alpata.IdentityServer
             }
 
             app.UseStaticFiles();
-
+            app.UseCors("AllowSpecificOrigin");
             app.UseRouting();
             app.UseIdentityServer();
             app.UseAuthentication();
