@@ -4,10 +4,20 @@ using Meeting.WebApi.Infrastracture.Extensions;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc.Authorization;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.ConfigureSqlContext(builder.Configuration);
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder.AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader());
+});
+
 
 builder.Services
     //.AddDataAccessServices(builder.Configuration)
@@ -15,17 +25,19 @@ builder.Services
     .AddBusinessServices();
 
 
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options =>
-{
-    options.Authority = builder.Configuration["IdentityServerURL"];
-    options.RequireHttpsMetadata = false;
-    options.Audience = "resource_meetingResource";
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
+    {
+        options.Authority = builder.Configuration["IdentityServerURL"];
+        options.Audience = "resource_meetingResource";
+        options.RequireHttpsMetadata = false; 
+    });
 
-});
+
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("MeetingFullPermission", policy => policy.RequireClaim("scope", "Meeting_fullpermission"));
+    options.AddPolicy("Meeting_fullpermission", policy => policy.RequireClaim("scope", "Meeting_fullpermission"));
 });
 
 builder.Services.AddControllers(opt =>
@@ -44,7 +56,7 @@ if (app.Environment.IsDevelopment())
 	app.UseSwagger();
 	app.UseSwaggerUI();
 }
-
+app.UseCors("CorsPolicy");
 app.UseStaticFiles();
 app.UseHttpsRedirection();
 app.UseAuthentication();

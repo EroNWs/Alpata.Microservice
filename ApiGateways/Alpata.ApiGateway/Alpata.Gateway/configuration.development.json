@@ -17,10 +17,18 @@
         "AllowedScopes": [ "Admin_Permission" ]
       },
       "AuthorizationOptions": {
-        "Roles": [ "Admin" ],
-        "Policy": "AdminPolicy"
+
       }
     }
 
-  ]
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5000",
+    "IdentityServerConfiguration": {
+      "Authority": "http://localhost:5010",
+      "ApiName": "YourApiName",
+      "ApiSecret": "YourApiSecret",
+      "SupportedScopes": [ "Meeting_fullpermission" ]
+    }
+  }
 }

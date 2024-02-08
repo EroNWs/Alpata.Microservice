@@ -10,7 +10,7 @@ public class MeetingPlanning:AuditableEntity
 
     public string MeetingDescription { get; set; }
 
-    public string DocumentPath { get; set; }
+    public string? DocumentPath { get; set; }
 
 }
 

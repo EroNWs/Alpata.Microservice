@@ -6,6 +6,6 @@ public class MeetingBaseDto
     public DateTime StartDateTime { get; set; }
     public DateTime FinishDateTime { get; set; }
     public string MeetingDescription { get; set; }
-    public string DocumentPath { get; set; }
+    public string? DocumentPath { get; set; }
 
 }

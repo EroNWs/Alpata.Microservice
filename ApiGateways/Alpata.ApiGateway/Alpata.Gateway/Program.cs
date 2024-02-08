@@ -17,23 +17,21 @@ builder.Services.AddCors(options =>
 builder.Configuration.AddJsonFile($"configuration.{builder.Environment
 	.EnvironmentName.ToLower()}.json");
 
+
+
+builder.Services.AddAuthentication()
+    .AddJwtBearer("GatewayAuthenticationScheme", options =>
+    {
+        options.Authority = builder.Configuration["IdentityServerUrl"];
+        options.Audience = "resource_gateway";
+        options.RequireHttpsMetadata = false;
+    });
+
 builder.Services.AddOcelot();
-
-builder.Services.AddAuthentication().
-    AddJwtBearer("GatewayAuthenticationScheme", options =>
-{
-    options.Authority = builder.Configuration["IdentityServerURL"];
-    options.Audience = "resource_gateway";
-    options.RequireHttpsMetadata = false;
-});
-
-
 
 
 var app = builder.Build();
 app.UseCors("CorsPolicy");
-app.MapGet("/", () => "Hello World!");
-app.UseRouting();
 app.UseAuthentication(); 
 app.UseAuthorization();
 app.UseDeveloperExceptionPage();

@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Meeting.WebApi.Controllers
 {
+   
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize(Policy = "Meeting_fullpermission")]
     public class MeetingController : ControllerBase
     {
         private readonly IMeetingService _meetingService;
@@ -16,7 +18,6 @@ namespace Meeting.WebApi.Controllers
         }
 
         [HttpGet("{id}")]
-        [Authorize(Policy = "MeetingFullPermission")]
         public async Task<IActionResult> GetByIdAsync(Guid id)
         {
             var result = await _meetingService.GetByIdAsync(id);
@@ -29,7 +30,7 @@ namespace Meeting.WebApi.Controllers
         }
 
         [HttpGet("getall")]
-        [Authorize(Policy = "MeetingFullPermission")]
+
         public async Task<IActionResult> GetAll()
         {
             var result = await _meetingService.GetAllAsync();
@@ -41,8 +42,7 @@ namespace Meeting.WebApi.Controllers
             return Ok(result.Data);
         }
 
-        [HttpPost("createmeeting")]
-        [Authorize(Policy = "MeetingFullPermission")]
+        [HttpPost("createmeeting")]     
         public async Task<IActionResult> CreateMeeting([FromForm] MeetingCreateDto meetingCreateDto, [FromForm] IFormFile document)
         {
             if (document != null)
@@ -70,14 +70,13 @@ namespace Meeting.WebApi.Controllers
             {
                 return BadRequest(result.Message);
             }
-
-
             return CreatedAtAction(nameof(GetByIdAsync), new { id = result.Data.Id }, result.Data);
+
         }
 
 
         [HttpPut("{id}")]
-        [Authorize(Policy = "MeetingFullPermission")]
+
         public async Task<IActionResult> Update(Guid id, [FromForm] MeetingUpdateDto meetingUpdateDto, IFormFile document)
         {
             if (id != meetingUpdateDto.Id)
@@ -87,7 +86,7 @@ namespace Meeting.WebApi.Controllers
 
             if (document != null)
             {
-                // Dosya güncelleme işlemleri burada gerçekleştirilecek
+              
             }
 
             var result = await _meetingService.UpdateAsync(meetingUpdateDto);
@@ -100,7 +99,7 @@ namespace Meeting.WebApi.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize(Policy = "MeetingFullPermission")]
+
         public async Task<IActionResult> Delete(Guid id)
         {
             var result = await _meetingService.DeleteAsync(id);
